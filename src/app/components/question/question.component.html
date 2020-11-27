@@ -1,0 +1,40 @@
+<form [formGroup]="form">
+
+  <div [ngSwitch]="question.ui">
+
+    <div *ngSwitchCase="'lb'">
+      <label>{{ question.label }}</label>
+    </div>
+
+    <div *ngSwitchCase="'tb'" class="form-group">
+      <label [attr.for]="question.questionId">{{ question.label }}</label>
+      <input class="form-control"
+        [id]="question.questionId"
+        [formControlName]="question.questionId"
+        type="text" />
+    </div>
+
+    <div *ngSwitchCase="'cb'" class="form-check">
+      <input class="form-check-input"
+        [id]="question.questionId"
+        [formControlName]="question.questionId"
+        type="checkbox" />
+      <label class="form-check-label" [attr.for]="question.questionId">{{ question.label }}</label>
+    </div>
+
+    <div *ngSwitchCase="'rbil'">
+      <label [attr.for]="question.questionId">{{ question.label }}</label>
+      <div *ngFor="let option of question.options" class="form-check">
+        <input class="form-check-input"
+          [id]="option.questionOptionId"
+          [formControlName]="option.questionId"
+          [attr.name]="option.questionId"
+          type="radio" />
+        <label class="form-check-label" [attr.for]="option.questionOptionId">{{ option.description }}</label>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="alert alert-danger" *ngIf="isInvalid">{{ question.label }} is required</div>
+</form>

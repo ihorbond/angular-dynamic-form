@@ -1,0 +1,8 @@
+<div class="card-header">
+  {{ section.label }}
+</div>
+<div class="card-body">
+  <div *ngFor="let question of section.questions" class="form-row">
+    <app-question [question]="question" [form]="form"></app-question>
+  </div>
+</div>
