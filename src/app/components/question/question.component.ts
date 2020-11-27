@@ -10,13 +10,12 @@ import Question from 'src/app/shared/models/question';
 export class QuestionComponent implements OnInit {
   @Input() question: Question;
   @Input() form: FormGroup;
+
   constructor() { }
 
-  ngOnInit(): void {
-    // console.log(this.question, this.form)
-  }
+  ngOnInit(): void { }
 
-  get isInvalid() {
+  get isInvalid(): boolean {
     const id = this.question.questionId.toString();
     return this.question.ui !== 'lb' && this.form.get(id).invalid;
   }

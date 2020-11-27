@@ -40,7 +40,7 @@ export class PageComponent implements OnInit, OnDestroy {
     this.subscriptions.forEach(s => s.unsubscribe());
   }
 
-  get next (): string | string[] {
+  get next (): string {
     return this.page.nextPageId === 0
       ? '/summary'
       : `/pages/${this.page.nextPageId}`;

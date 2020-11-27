@@ -26,7 +26,7 @@ export class SummaryComponent implements OnInit {
     private _store: Store<{ form: any }>,
     private _location: Location,
     private _router: Router,
-    private _pageService: PageService,
+    private _pageService: PageService
   ) { }
 
   ngOnInit(): void {
