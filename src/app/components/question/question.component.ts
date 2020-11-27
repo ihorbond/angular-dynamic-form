@@ -17,7 +17,8 @@ export class QuestionComponent implements OnInit {
   }
 
   get isInvalid() {
-    return this.question.ui !== 'lb' && this.form.invalid;
+    const id = this.question.questionId.toString();
+    return this.question.ui !== 'lb' && this.form.get(id).invalid;
   }
 
 }

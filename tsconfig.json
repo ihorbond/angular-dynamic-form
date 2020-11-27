@@ -18,5 +18,8 @@
     ],
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true
+  },
+  "angularCompilerOptions": {
+    "enableIvy": false
   }
 }

@@ -2,7 +2,7 @@
   {{ section.label }}
 </div>
 <div class="card-body">
-  <div *ngFor="let question of section.questions" class="form-row">
+  <div *ngFor="let question of section.questions">
     <app-question [question]="question" [form]="form"></app-question>
   </div>
 </div>
