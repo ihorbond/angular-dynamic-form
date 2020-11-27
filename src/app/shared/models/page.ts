@@ -2,6 +2,7 @@ import Section from './section';
 
 export default interface Page {
   pageId: number;
+  pageNum: number;
   name: string;
   label: string;
   nextPageId: number;

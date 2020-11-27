@@ -12,7 +12,8 @@ import { SectionComponent } from './components/section/section.component';
 import { QuestionComponent } from './components/question/question.component';
 import { formReducer } from './store/reducers/form.reducer';
 import { environment } from 'src/environments/environment';
-import { SummaryComponent } from './components/summary/summary.component'
+import { SummaryComponent } from './components/summary/summary.component';
+import { NotFoundComponent } from './components/not-found/not-found.component'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SummaryComponent } from './components/summary/summary.component'
     PageComponent,
     SectionComponent,
     QuestionComponent,
-    SummaryComponent
+    SummaryComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AppComponent } from './app.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 import { PageComponent } from './components/page/page.component';
 import { SummaryComponent } from './components/summary/summary.component';
 
@@ -13,9 +15,12 @@ const routes: Routes = [
     component: SummaryComponent
   },
   {
-    path:'',
-    redirectTo: 'pages/172',
-    pathMatch: 'full'
+    path: '',
+    component: AppComponent
+  },
+  {
+    path:'**',
+    component: NotFoundComponent
   }
 ];
 

@@ -32,7 +32,7 @@ export class PageComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this._activeRoute.params.subscribe(params => {
       const pageId = Number(params.id);
-      this._pageService.getPage(pageId).subscribe(this.onGetPage.bind(this))
+      this._pageService.getPage(pageId).subscribe(this.onGetPage.bind(this));
     })
   }
 
@@ -40,7 +40,11 @@ export class PageComponent implements OnInit, OnDestroy {
     this.subscriptions.forEach(s => s.unsubscribe());
   }
 
-  get next (): string {
+  get isFirstPage (): boolean {
+    return this.page.pageNum === 1;
+  }
+
+  get nextPageUrl (): string {
     return this.page.nextPageId === 0
       ? '/summary'
       : `/pages/${this.page.nextPageId}`;

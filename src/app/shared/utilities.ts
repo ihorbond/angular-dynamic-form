@@ -5,7 +5,7 @@ import Question from './models/question';
 function normalizeData<T>(obj: any): T {
   return Object.keys(obj).reduce((acc, key) => {
     const val = obj[key];
-    const camelCaseKey = camelCase(key)
+    const camelCaseKey = camelCase(key);
 
     if (Array.isArray(val)) {
       acc[camelCaseKey] = val.map(normalizeData);

@@ -9,6 +9,7 @@ import { Subscription } from 'rxjs';
 import Page from 'src/app/shared/models/page';
 import { extractQuestions } from 'src/app/shared/utilities';
 import Question from 'src/app/shared/models/question';
+import { UITypesEnum } from 'src/app/shared/enums/ui-types';
 
 @Component({
   selector: 'app-summary',
@@ -47,10 +48,10 @@ export class SummaryComponent implements OnInit {
   getAnswer (q: Question): string {
     const val = this.form[q.questionId];
     const options = {
-      'lb': q.label,
-      'cb': val ? `${q.label} ✅ ` : '',
-      'tb': val ? `${q.label}: ${val}` : '',
-      'rbil': val ? `${q.label}: ${val}`: ''
+      [UITypesEnum.Label]: q.label,
+      [UITypesEnum.Checkbox]: val ? `${q.label} ✅ ` : '',
+      [UITypesEnum.Textbox]: val ? `${q.label}: ${val}` : '',
+      [UITypesEnum.RadioGroup]: val ? `${q.label}: ${val}`: ''
     }
 
     return options[q.ui];

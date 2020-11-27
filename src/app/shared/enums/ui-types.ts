@@ -1,6 +1,6 @@
-export const enum UITypesEnum {
-  lb,
-  cb,
-  tb,
-  rbil
+export enum UITypesEnum {
+  Label = 'lb',
+  Checkbox = 'cb',
+  Textbox = 'tb',
+  RadioGroup = 'rbil'
 }

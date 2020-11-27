@@ -2,11 +2,11 @@
 
   <div [ngSwitch]="question.ui">
 
-    <div *ngSwitchCase="'lb'">
+    <div *ngSwitchCase="uiTypesEnum.Label">
       <label>{{ question.label }}</label>
     </div>
 
-    <div *ngSwitchCase="'tb'" class="form-group">
+    <div *ngSwitchCase="uiTypesEnum.Textbox" class="form-group">
       <label [attr.for]="question.questionId">{{ question.label }}</label>
       <input class="form-control"
         [id]="question.questionId"
@@ -14,14 +14,15 @@
         type="text" />
     </div>
 
-    <div *ngSwitchCase="'cb'" class="form-check">
+    <div *ngSwitchCase="uiTypesEnum.Checkbox" class="form-check">
       <input class="form-check-input"
         [id]="question.questionId"
         [formControlName]="question.questionId"
         type="checkbox" />
       <label class="form-check-label" [attr.for]="question.questionId">{{ question.label }}</label>
     </div>
-    <div *ngSwitchCase="'rbil'">
+
+    <div *ngSwitchCase="uiTypesEnum.RadioGroup">
       <label [attr.for]="question.questionId">{{ question.label }}</label>
       <div *ngFor="let option of question.options" class="form-check">
         <input class="form-check-input"

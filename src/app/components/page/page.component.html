@@ -6,7 +6,7 @@
     </div>
   </form>
   <div class="d-flex justify-content-between m-2">
-    <button class="btn btn-primary" (click)="goBack()" [disabled]="page.pageId === 172">Previous</button>
-    <button class="btn btn-primary" [routerLink]="next">Next</button>
+    <button class="btn btn-primary" (click)="goBack()" [disabled]="isFirstPage">Previous</button>
+    <button class="btn btn-primary" [routerLink]="nextPageUrl">Next</button>
   </div>
 </div>

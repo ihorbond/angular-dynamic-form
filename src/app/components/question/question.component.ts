@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { UITypesEnum } from 'src/app/shared/enums/ui-types';
 import Question from 'src/app/shared/models/question';
 
 @Component({
@@ -11,13 +12,15 @@ export class QuestionComponent implements OnInit {
   @Input() question: Question;
   @Input() form: FormGroup;
 
+  uiTypesEnum = UITypesEnum;
+
   constructor() { }
 
   ngOnInit(): void { }
 
   get isInvalid(): boolean {
     const id = this.question.questionId.toString();
-    return this.question.ui !== 'lb' && this.form.get(id).invalid;
+    return this.question.ui !== UITypesEnum.Label && this.form.get(id).invalid;
   }
 
 }
