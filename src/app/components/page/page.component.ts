@@ -1,14 +1,14 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { PageService } from 'src/app/core/services/page.service';
-import Page from 'src/app/shared/models/page';
+import { PageService } from '@services/page.service';
+import Page from '@models/page';
 import { FormGroup } from '@angular/forms';
-import { FormService } from 'src/app/core/services/form.service';
-import { save } from 'src/app/store/actions/form.actions';
+import { FormService } from '@services/form.service';
+import { save } from '@store/actions/form.actions';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
-import { extractQuestions } from 'src/app/shared/utilities';
+import { extractQuestions } from '@utils/page-utils';
 
 @Component({
   selector: 'app-page',

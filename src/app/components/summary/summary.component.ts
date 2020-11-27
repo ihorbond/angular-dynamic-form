@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { reset } from 'src/app/store/actions/form.actions';
-import { PageService } from 'src/app/core/services/page.service';
+import { reset } from '@store/actions/form.actions';
+import { PageService } from '@services/page.service';
 import { Subscription } from 'rxjs';
 
-import Page from 'src/app/shared/models/page';
-import { extractQuestions } from 'src/app/shared/utilities';
-import Question from 'src/app/shared/models/question';
-import { UITypesEnum } from 'src/app/shared/enums/ui-types';
+import Page from '@models/page';
+import { extractQuestions } from '@utils/page-utils';
+import Question from '@models/question';
+import { UITypesEnum } from 'app/shared/enums/ui-types';
 
 @Component({
   selector: 'app-summary',

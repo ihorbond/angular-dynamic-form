@@ -11,7 +11,7 @@ import { PageComponent } from './components/page/page.component';
 import { SectionComponent } from './components/section/section.component';
 import { QuestionComponent } from './components/question/question.component';
 import { formReducer } from './store/reducers/form.reducer';
-import { environment } from 'src/environments/environment';
+import { environment } from '@env/environment';
 import { SummaryComponent } from './components/summary/summary.component';
 import { NotFoundComponent } from './components/not-found/not-found.component'
 

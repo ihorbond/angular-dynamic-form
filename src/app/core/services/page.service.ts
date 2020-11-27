@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from "rxjs";
-import { normalizeData } from 'src/app/shared/utilities'
-import Page from 'src/app/shared/models/page';
+import { normalizeData } from '@utils/page-utils'
+import Page from '@models/page';
 
-import data from "src/assets/data/form.json";
+import data from "assets/data/form.json";
 
 @Injectable({
   providedIn: 'root'

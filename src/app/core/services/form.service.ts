@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
-import Question from 'src/app/shared/models/question';
+import Question from '@models/question';
 
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { UITypesEnum } from 'src/app/shared/enums/ui-types';
+import { UITypesEnum } from '@enums/ui-types';
 
 @Injectable({
   providedIn: "root"

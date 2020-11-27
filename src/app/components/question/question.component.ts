@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { UITypesEnum } from 'src/app/shared/enums/ui-types';
-import Question from 'src/app/shared/models/question';
+import { UITypesEnum } from '@enums/ui-types';
+import Question from '@models/question';
 
 @Component({
   selector: 'app-question',

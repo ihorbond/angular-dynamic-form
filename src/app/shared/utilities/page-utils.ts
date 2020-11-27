@@ -1,6 +1,6 @@
 import { camelCase, flatten } from 'lodash'
-import Page from './models/page';
-import Question from './models/question';
+import Page from '../models/page';
+import Question from '../models/question';
 
 function normalizeData<T>(obj: any): T {
   return Object.keys(obj).reduce((acc, key) => {
