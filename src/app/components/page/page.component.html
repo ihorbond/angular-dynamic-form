@@ -1,5 +1,13 @@
 <div *ngIf="page" class="container">
   <h1 class="text-center">{{ page.name }}</h1>
+  <div class="progress m-2">
+    <div class="progress-bar"
+    role="progressbar"
+    aria-valuemin="0"
+    [style.width.%]="progress * 100"
+    [attr.aria-valuenow]="progress"
+    [attr.aria-valuemax]="page.totalPages">{{ progress | percent}}</div>
+  </div>
   <form [formGroup]="form">
     <div class="card m-2" *ngFor="let section of page.sections">
       <app-section [section]="section" [form]="form"></app-section>

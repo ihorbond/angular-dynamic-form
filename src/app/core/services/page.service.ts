@@ -16,6 +16,7 @@ export class PageService {
     const pageIdx = data.findIndex(x => x.PageID === pageId);
     const normalized = normalizeData<Page>(data[pageIdx]);
     normalized.pageNum = pageIdx + 1;
+    normalized.totalPages = data.length;
 
     return of(normalized);
   }
@@ -28,4 +29,5 @@ export class PageService {
   getInitialPageId (): Observable<number> {
     return of(data[0].PageID);
   }
+
 }

@@ -13,4 +13,5 @@ export default interface Page {
   createdBy: number;
   isActive: boolean;
   sections: Section[];
+  totalPages: number;
 }

@@ -50,6 +50,10 @@ export class PageComponent implements OnInit, OnDestroy {
       : `/pages/${this.page.nextPageId}`;
   }
 
+  get progress (): number {
+    return this.page.pageNum / this.page.totalPages;
+  }
+
   goBack (): void {
     this._location.back();
   }
