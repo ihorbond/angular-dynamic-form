@@ -16,7 +16,8 @@ import Question from 'src/app/shared/models/question';
   styleUrls: ['./summary.component.scss']
 })
 export class SummaryComponent implements OnInit {
-  questions: any[];
+  questions: Question[];
+  hasSubmitted: boolean = false;
 
   private form: any = {};
   private subscriptions: Subscription[] = [];
@@ -61,6 +62,7 @@ export class SummaryComponent implements OnInit {
 
   submit (): void {
     alert('We received your application!');
+    this.hasSubmitted = true;
   }
 
   startOver (): void {
