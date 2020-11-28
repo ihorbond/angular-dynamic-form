@@ -3,7 +3,7 @@ import { Observable, of } from "rxjs";
 
 import { normalizeData } from '../../shared/utilities/page-utils'
 import Page from '../../shared/models/page';
-import data from "assets/data/form.json";
+import data from '../../../assets/data/form.json';
 
 @Injectable({
   providedIn: 'root'
