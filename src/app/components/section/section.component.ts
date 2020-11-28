@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import Section from '@models/section';
+import Section from '../../shared/models/section';
 
 @Component({
   selector: 'app-section',

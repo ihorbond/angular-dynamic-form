@@ -1,22 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { reset } from '@store/actions/form.actions';
-import { PageService } from '@services/page.service';
 import { Subscription } from 'rxjs';
 
-import Page from '@models/page';
-import { extractQuestions } from '@utils/page-utils';
-import Question from '@models/question';
-import { UITypesEnum } from 'app/shared/enums/ui-types';
+import { reset } from '../../store/actions/form.actions';
+import { PageService } from '../../core/services/page.service';
+import Page from '../../shared/models/page';
+import { extractQuestions } from '../../shared/utilities/page-utils';
+import Question from '../../shared/models/question';
+import { UITypesEnum } from '../../shared/enums/ui-types';
 
 @Component({
   selector: 'app-summary',
   templateUrl: './summary.component.html',
   styleUrls: ['./summary.component.scss']
 })
-export class SummaryComponent implements OnInit {
+export class SummaryComponent implements OnInit, OnDestroy {
   questions: Question[];
   hasSubmitted: boolean = false;
 

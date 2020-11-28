@@ -1,14 +1,15 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { PageService } from '@services/page.service';
-import Page from '@models/page';
 import { FormGroup } from '@angular/forms';
-import { FormService } from '@services/form.service';
-import { save } from '@store/actions/form.actions';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
-import { extractQuestions } from '@utils/page-utils';
+
+import Page from '../../shared/models/page';
+import { PageService } from '../../core/services/page.service';
+import { FormService } from '../../core/services/form.service';
+import { save } from '../../store/actions/form.actions';
+import { extractQuestions } from '../../shared/utilities/page-utils';
 
 @Component({
   selector: 'app-page',
@@ -58,8 +59,8 @@ export class PageComponent implements OnInit, OnDestroy {
     this._location.back();
   }
 
-  private onGetPage (res: Page): void {
-    this.page = res;
+  private onGetPage (page: Page): void {
+    this.page = page;
     const questions = extractQuestions([this.page]);
     this.form = this._formService.toFormGroup(questions);
 

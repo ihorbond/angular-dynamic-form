@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from "rxjs";
-import { normalizeData } from '@utils/page-utils'
-import Page from '@models/page';
 
+import { normalizeData } from '../../shared/utilities/page-utils'
+import Page from '../../shared/models/page';
 import data from "assets/data/form.json";
 
 @Injectable({

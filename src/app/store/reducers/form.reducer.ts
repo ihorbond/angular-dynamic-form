@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { save, reset } from '@store/actions/form.actions';
+import { save, reset } from '../actions/form.actions';
 
 export const initialState = {
   form: {}
